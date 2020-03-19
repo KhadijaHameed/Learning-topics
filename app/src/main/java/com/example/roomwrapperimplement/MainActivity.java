@@ -14,6 +14,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.roomwrapperimplement.db.Repository;
@@ -31,14 +32,19 @@ import okhttp3.OkHttpClient;
 public class MainActivity extends AppCompatActivity {
 
     Repository dbRepo;
+    EditText etNewWord;
+    String newWord = " ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dbRepo =new Repository(getApplicationContext());
+        dbRepo = new Repository(getApplicationContext());
 
-       // Stetho.initializeWithDefaults(this);
+        etNewWord = findViewById(R.id.et_word);
+
+        //region stetho
+        // Stetho.initializeWithDefaults(this);
         new OkHttpClient.Builder()
                 .addNetworkInterceptor(new StethoInterceptor())
                 .build();
@@ -47,25 +53,29 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public Iterable<DumperPlugin> get() {
                         return new Stetho.DefaultDumperPluginsBuilder(MainActivity.this)
-                              //  .provide(new MyDumperPlugin())
+                                //  .provide(new MyDumperPlugin())
                                 .finish();
                     }
                 })
                 .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
                 .build());
+        //endregion stetho
 
-
-            FloatingActionButton fab = findViewById(R.id.fab);
-            fab.setOnClickListener(view -> {
-
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(view -> {
             try {
-                Word word=new Word("Add");
-                dbRepo.insert(word);
-                Toast.makeText(this, "Insert Successfully! "+word.getWord(), Toast.LENGTH_SHORT).show();
-            }catch (Exception e){
-                Log.d("#error",e.getLocalizedMessage());
+                newWord = etNewWord.getText().toString();
+                Word word = new Word("");
+                //    dbRepo.insert(word);
+                //    dbRepo.updateWord(word, 9);
+                //    dbRepo.deleteRowbyID(10);
+                //    **it can also delete null space row <==>
+                //    dbRepo.deleteRowbySpecificWord(word);
+                Toast.makeText(this, "delete Successfully! " + word.getWord(), Toast.LENGTH_SHORT).show();
+                etNewWord.setText(" ");
+            } catch (Exception e) {
+                Log.d("#error", e.getLocalizedMessage());
             }
-
         });
 
     }

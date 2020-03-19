@@ -10,7 +10,7 @@ import com.example.roomwrapperimplement.Word;
 
 @Database(entities = {Word.class}, version = 1, exportSchema = false)
     public abstract class WordRoomDatabase extends RoomDatabase {
-
+        //db instance
         public abstract WordDao wordDao();
 
         private static WordRoomDatabase INSTANCE;
