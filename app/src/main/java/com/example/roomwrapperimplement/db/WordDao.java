@@ -3,24 +3,25 @@ package com.example.roomwrapperimplement.db;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
-import androidx.room.Query;
-import androidx.room.Update;
 
-import com.example.roomwrapperimplement.Word;
-
-import java.util.List;
-
-import static androidx.room.OnConflictStrategy.REPLACE;
+import com.example.roomwrapperimplement.NewWord;
+import com.example.roomwrapperimplement.OldWord;
 
 @Dao
 public interface WordDao {
-
-  // queries
-  // allowing the insert of the same word multiple times by passing a
-    // conflict resolution strategy
+   // queries
+   // allowing the insert of the same word multiple times by passing a
+   // conflict resolution strategy
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void  insert(Word word);
+    void  oinsert(OldWord oldWord);
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    void  ninsert(NewWord mNewWord);
 
+   /*//second table
+  @Insert(onConflict = OnConflictStrategy.IGNORE)
+  void  sInsert(WordSecondTable sword);*/
+
+  /*
     @Query("DELETE FROM word_table")
     void deleteAll();
 
@@ -40,4 +41,8 @@ public interface WordDao {
     //delete row from id
     @Query("DELETE FROM word_table WHERE word=:word")
     void deleteRowByWord(String word);
+*/
+
+
+
 }

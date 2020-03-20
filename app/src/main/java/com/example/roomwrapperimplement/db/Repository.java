@@ -1,13 +1,10 @@
 package com.example.roomwrapperimplement.db;
 
-import android.app.Application;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
-import com.example.roomwrapperimplement.Word;
-
-import java.util.List;
+import com.example.roomwrapperimplement.NewWord;
+import com.example.roomwrapperimplement.OldWord;
 
 public class Repository {
 
@@ -17,11 +14,11 @@ public class Repository {
     public Repository(Context application){
         database = WordRoomDatabase.getDatabase(application);
     }
-    public void insert (Word word){
-        AsyncTask.execute(() -> database.wordDao().insert(word));
-    }
+   public void insert (OldWord oldWord){
+     AsyncTask.execute(() -> database.wordDao().oinsert(oldWord));
+}
 
-    public void updateWord(Word word, int id){
+   /* public void updateWord(Word word, int id){
       AsyncTask.execute(() -> database.wordDao().update(word.getWord(), id));
     }
 
@@ -31,6 +28,11 @@ public class Repository {
 
     public void deleteRowbySpecificWord(Word word){
         AsyncTask.execute(() -> database.wordDao().deleteRowByWord(word.getWord()));
+    }*/
+
+    //second table
+    public void ninsert (NewWord mNewWord){
+       AsyncTask.execute(() -> database.wordDao().ninsert(mNewWord));
     }
 }
 
