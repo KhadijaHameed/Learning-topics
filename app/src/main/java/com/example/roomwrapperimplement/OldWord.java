@@ -10,6 +10,7 @@ public class OldWord {
 
     @PrimaryKey
     @NonNull
+    //@ColumnInfo(name = "second_word", nname = "second_word")
     @ColumnInfo(name = "second_word")
     private String mWord;
 

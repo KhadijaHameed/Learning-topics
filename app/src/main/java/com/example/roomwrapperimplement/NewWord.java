@@ -25,15 +25,24 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "sword_table")
 public class NewWord {
+    public NewWord(String mWord) {this.mWord = mWord;}
 
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "sword")
     private String mWord;
 
-   public NewWord(String mWord) {this.mWord = mWord;}
-   //public Word() {}
+    //multiple columns in one table
+    @ColumnInfo(name = "title")
+    private String title;
+
+    @ColumnInfo(name = "description")
+    private String description;
+
+
    public String getWord(){return this.mWord;}
+
+
 }
 
 
