@@ -1,31 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/new_word"
+    android:orientation="vertical"
+    android:background="@drawable/aaaaa"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<!--//android:background="@android:color/darker_gray"-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_word"
+            android:layout_width="160dp"
+            android:textSize="15sp"
+            android:padding="25dp"
+            android:background="@drawable/rounded_et_bg"
+            android:fontFamily="@font/josefin_sans_bold_italic"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:textColorHint="@android:color/holo_blue_dark"
+            android:hint="Add from here..|"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_update"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_blue_dark"
+            android:drawableRight="@drawable/edit"
+            android:fontFamily="@font/josefin_sans_bold_italic"
+            android:paddingRight="5dp"
+            android:text="  Update  "
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/button_delete"
+            app:layout_constraintStart_toStartOf="@+id/button_insert"
+            app:layout_constraintTop_toBottomOf="@+id/button_insert" />
+
+        <Button
+            android:id="@+id/button_insert"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:textAllCaps="false"
+            android:background="@android:color/holo_green_dark"
+            android:drawableRight="@drawable/insert"
+            android:fontFamily="@font/josefin_sans_bold_italic"
+            android:paddingRight="5dp"
+            android:text="  Insert"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/button_update"
+            app:layout_constraintStart_toStartOf="@+id/et_word"
+            app:layout_constraintTop_toBottomOf="@+id/et_word" />
+
+        <Button
+            android:id="@+id/button_get_all_data"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/black"
+            android:drawableRight="@drawable/folder_o"
+            android:fontFamily="@font/josefin_sans_bold_italic"
+            android:paddingRight="5dp"
+            android:text="  Get All Data  "
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/button_delete"
+            app:layout_constraintTop_toBottomOf="@+id/button_delete" />
+
+        <Button
+            android:id="@+id/button_delete_all_data"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:drawableRight="@drawable/delete_all"
+            android:fontFamily="@font/josefin_sans_bold_italic"
+            android:paddingRight="5dp"
+            android:layout_marginTop="10dp"
+            android:text="  Delete All Data "
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/button_get_all_data"
+            app:layout_constraintTop_toBottomOf="@+id/button_get_all_data"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="#FF6347"
+            android:drawableRight="@drawable/delet"
+            android:fontFamily="@font/josefin_sans_bold_italic"
+            android:paddingRight="5dp"
+            android:text=" Delete "
+            android:textAllCaps="false"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/button_get_all_data"
+            app:layout_constraintStart_toStartOf="@+id/button_update"
+            app:layout_constraintTop_toBottomOf="@+id/button_update" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/button_get_all_data">
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_add_black_24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/tv_get_all_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="''List''"
+            android:visibility="gone"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:layout_marginTop="50dp"
-        android:id="@+id/et_word"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="NEW WORD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_person_inmfo"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            tools:listitem="@layout/single_row_data" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

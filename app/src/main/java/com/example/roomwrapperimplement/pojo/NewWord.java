@@ -1,4 +1,4 @@
-package com.example.roomwrapperimplement;
+package com.example.roomwrapperimplement.pojo;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

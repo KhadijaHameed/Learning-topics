@@ -6,22 +6,22 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.roomwrapperimplement.OldWord;
-import com.example.roomwrapperimplement.NewWord;
+import com.example.roomwrapperimplement.db.queries.PersonInfoDao;
+import com.example.roomwrapperimplement.pojo.PersonInfo;
 
-@Database(entities = {NewWord.class, OldWord.class}, version = 1, exportSchema = false)
+@Database(entities = {PersonInfo.class}, version = 1, exportSchema = false)
     public abstract class WordRoomDatabase extends RoomDatabase {
         //db instance
-        public abstract WordDao wordDao();
+        public abstract PersonInfoDao personInfoDao();
 
         private static WordRoomDatabase INSTANCE;
 
-        public static WordRoomDatabase getDatabase(Context context) {
+        public static WordRoomDatabase getInstance(Context context) {
             if (INSTANCE == null) {
                 synchronized (WordRoomDatabase.class) {
                     if (INSTANCE == null) {
                         INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                                WordRoomDatabase.class, "word_database")
+                                WordRoomDatabase.class, "personinfo_database")
                                // .allowMainThreadQueries()
                                 .build();
                     }
