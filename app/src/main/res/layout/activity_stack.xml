@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_stack_push"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="15dp"
+        android:text="stack push"
+        app:layout_constraintEnd_toEndOf="@+id/et_stack_push"
+        app:layout_constraintStart_toStartOf="@+id/et_stack_push"
+        app:layout_constraintTop_toBottomOf="@+id/et_stack_push" />
+
+    <EditText
+        android:id="@+id/et_stack_push"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:hint="stack push values"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_stack_pop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pop value here"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_stack_push" />
+
+    <Button
+        android:id="@+id/btn_show_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Show Result!"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_stack_push"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_stack_push"
+        app:layout_constraintTop_toBottomOf="@+id/btn_stack_push" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
