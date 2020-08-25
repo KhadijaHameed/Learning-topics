@@ -5,24 +5,33 @@
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/a"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/a"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--it is used for using custom fontsfor complete app-->
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <activity android:name=".adapter.EditInfo"></activity>
+
+        <!-- room db -->
         <activity android:name=".MainActivity"></activity>
-        <activity android:name="com.example.stack.StackActivity">
+        <activity android:name=".adapter.EditInfo"></activity>
+
+        <!-- db stack -->
+        <activity android:name="com.example.stack.StackActivity"></activity>
+
+        <!-- age calculator  -->
+        <activity android:name="com.example.ageCalculator.ACSplashScreen">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
+        <activity android:name="com.example.ageCalculator.ACMainActivity"></activity>
 
 
 
