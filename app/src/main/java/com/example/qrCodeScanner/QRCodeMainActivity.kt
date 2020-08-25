@@ -13,7 +13,7 @@ import com.example.roomwrapperimplement.R
 import com.google.zxing.Result
 import me.dm7.barcodescanner.zxing.ZXingScannerView
 
-class ZoomMainActivity : AppCompatActivity(),ZXingScannerView.ResultHandler{
+class QRCodeMainActivity : AppCompatActivity(),ZXingScannerView.ResultHandler{
 
 
     val TAG = "test"
