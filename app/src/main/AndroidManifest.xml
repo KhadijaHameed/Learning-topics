@@ -2,11 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.roomwrapperimplement">
 
+
     <!--pkg => zoom-->
     <uses-permission android:name="android.permission.CAMERA" />
     <!--pkg => music -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--pkg => download music -->
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 
     <application
@@ -18,6 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!--TODO::  Ask Runtime Permission -->
         <!--it is used for using custom fontsfor complete app-->
         <meta-data
             android:name="preloaded_fonts"
@@ -37,14 +41,16 @@
         <activity android:name="com.example.qrCodeScanner.QRCodeMainActivity"></activity>
 
         <!-- playlist -->
-        <activity android:name="com.example.musicplayer.AndroidBuildingMusicPlayerActivity">
+        <activity android:name="com.example.musicplayer.AndroidBuildingMusicPlayerActivity"></activity>
+        <activity android:name="com.example.musicplayer.PlayListActivity"></activity>
+
+        <activity android:name="com.example.downloadMusic.DownloadMusicActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.musicplayer.PlayListActivity"></activity>
 
 
 
