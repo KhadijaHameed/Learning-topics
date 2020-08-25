@@ -69,10 +69,13 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-rc02"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    // pkg=>age calculator          purpose=> finding views
-    implementation 'com.jakewharton:butterknife:10.0.0'
+    // pkg=>age calculator
+    implementation 'com.jakewharton:butterknife:10.0.0'  //finding views
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
+    // pkg=>zoom
+    implementation 'me.dm7.barcodescanner:zxing:1.8.4'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'   //circle imageview
 
 
 }

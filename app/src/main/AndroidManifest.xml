@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.roomwrapperimplement">
 
+    <!--pkg => zoom-->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -24,14 +28,16 @@
         <activity android:name="com.example.stack.StackActivity"></activity>
 
         <!-- age calculator  -->
-        <activity android:name="com.example.ageCalculator.ACSplashScreen">
+        <activity android:name="com.example.ageCalculator.ACSplashScreen"></activity>
+        <activity android:name="com.example.ageCalculator.ACMainActivity"></activity>
+
+        <activity android:name="com.example.qrCodeScanner.ZoomMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.ageCalculator.ACMainActivity"></activity>
 
 
 
