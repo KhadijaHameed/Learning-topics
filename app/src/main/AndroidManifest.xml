@@ -4,6 +4,9 @@
 
     <!--pkg => zoom-->
     <uses-permission android:name="android.permission.CAMERA" />
+    <!--pkg => music -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
 
     <application
@@ -31,13 +34,17 @@
         <activity android:name="com.example.ageCalculator.ACSplashScreen"></activity>
         <activity android:name="com.example.ageCalculator.ACMainActivity"></activity>
 
-        <activity android:name="com.example.qrCodeScanner.ZoomMainActivity">
+        <activity android:name="com.example.qrCodeScanner.QRCodeMainActivity"></activity>
+
+        <!-- playlist -->
+        <activity android:name="com.example.musicplayer.AndroidBuildingMusicPlayerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.musicplayer.PlayListActivity"></activity>
 
 
 
