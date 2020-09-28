@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#333131"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:src="@drawable/logo"
+        android:layout_width="50dp"
+        android:layout_margin="15dp"
+        android:layout_height="50dp" />
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:id="@+id/home_layout"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/home"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+        <TextView
+            android:text="Home"
+            android:textColor="@color/list_text"
+            android:layout_marginLeft="10dp"
+            android:textSize="19sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/inventory_layout"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/home_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/inventory"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+        <TextView
+
+            android:text="Inventory"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/list_text"
+            android:textSize="19sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/customer_layout"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/inventory_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/customers"
+            android:layout_width="25dp"
+            android:layout_height="25dp"/>
+        <TextView
+            android:text="My Customers"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/list_text"
+            android:textSize="19sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/account_layout"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/customer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/account"
+            android:layout_width="25dp"
+            android:layout_height="25dp"/>
+        <TextView
+            android:text="My Accounts"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/list_text"
+            android:textSize="19sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/app_layout"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="45dp"
+        android:layout_below="@+id/account_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/app" />
+
+        <TextView
+            android:text="Application Tracker"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/list_text"
+            android:textSize="19sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/alert_layout"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="45dp"
+        android:layout_below="@+id/app_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/alert" />
+
+        <TextView
+            android:text="Alerts"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/list_text"
+            android:textSize="19sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/fav_layout"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="45dp"
+        android:layout_below="@+id/alert_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/heart" />
+
+        <TextView
+            android:text="Favourites"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/list_text"
+            android:textSize="19sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/comp_layout"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/fav_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/balance"
+            android:layout_width="25dp"
+            android:layout_height="25dp"/>
+        <TextView
+            android:text="Compare Properties"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/list_text"
+            android:textSize="19sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/setting_layout"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/comp_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/setting"
+            android:layout_width="25dp"
+            android:layout_height="25dp"/>
+        <TextView
+            android:text="Settings"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/list_text"
+            android:textSize="19sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/logout_layout"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/setting_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/logout"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+        <TextView
+            android:text="Logout"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/list_text"
+            android:textSize="19sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/logout_layout"
+        android:src="@drawable/hamptons"
+        android:layout_width="105dp"
+        android:layout_height="35dp" />
+</RelativeLayout>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#ffffff" android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+
+        android:id="@+id/setting_img"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/setting_layout"
+
+     />
+
+    <TextView
+        android:id="@+id/app"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/setting_img"
+        android:text="Application"
+        android:textSize="23sp"
+        android:textColor="@color/setting_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/setting"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/setting_img"
+        android:text="Setting"
+        android:textSize="23sp"
+        android:textColor="@color/setting_text"
+        android:layout_below="@+id/app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+<RelativeLayout
+    android:id="@+id/second"
+    android:background="#d9dadb"
+    android:layout_below="@id/first"
+    android:layout_marginTop="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:textSize="13sp"
+        android:padding="8dp"
+        android:textColor="@color/options"
+        android:layout_centerHorizontal="true"
+        android:text="Set your Language , Measurements , Currency and Notifications."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/third"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_marginTop="6dp"
+        android:textSize="15sp"
+            android:textColor="@color/options"
+        android:text="Language Options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/english"
+            android:layout_marginTop="6dp"
+            android:textSize="15sp"
+            android:textColor="@color/options"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@+id/tv"
+            android:text="English"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ToggleButton
+            android:layout_toRightOf="@+id/english"
+            android:id="@+id/switch1"
+            android:layout_marginLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          />
+
+        <TextView
+            android:id="@+id/arbi"
+            android:textColor="@color/options"
+            android:textSize="15dp"
+            android:text="عربی"
+            android:layout_margin="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/fourth"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <TextView
+            android:id="@+id/area"
+            android:textSize="15sp"
+            android:textColor="@color/options"
+            android:text="Area Measurements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/sq"
+            android:textSize="15sp"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/area"
+            android:text="Sq.ft"
+            android:textColor="@color/options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ToggleButton
+            android:layout_toRightOf="@+id/sq"
+            android:id="@+id/switch2"
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/sq_mtr"
+            android:textSize="15dp"
+            android:text="sq.m"
+            android:textColor="@color/options"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+           />
+
+        <TextView
+            android:id="@+id/currency"
+            android:textSize="15sp"
+            android:text="Currency"
+            android:textColor="@color/options"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/aed"
+            android:textSize="15sp"
+            android:layout_marginLeft="75dp"
+            android:layout_toRightOf="@+id/currency"
+            android:text="AED"
+            android:textColor="@color/options"
+            android:layout_marginTop="35dp"
+            android:layout_below="@+id/sq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ToggleButton
+            android:layout_toRightOf="@+id/aed"
+            android:id="@+id/switch3"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/usd"
+            android:textSize="15dp"
+            android:text="USD"
+            android:textColor="@color/options"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="38dp"
+            android:layout_below="@+id/area"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+
+
+    </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+

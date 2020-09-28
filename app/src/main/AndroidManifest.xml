@@ -53,12 +53,31 @@
 
         <!-- finger print -->
         <activity android:name="com.example.fingerPrint.FingerPrintActivity">
-            <intent-filter>
+
+        </activity>
+
+
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.ScreenMainActivity">
+
+          <!--  <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.Home"/>
+
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.Homescreen"/>
+
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.HomeScreen_two"/>
+
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.ForgotPassword"/>
+
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.Navigation"/>
+
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.Setting"/>
+
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.ScreenSplash"/>
 
     </application>
 
