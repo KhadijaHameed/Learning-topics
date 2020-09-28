@@ -51,17 +51,23 @@ class FingerPrintActivity :AppCompatActivity(),FingerprintResult{
     private var mdialog: AlertDialog? = null
 
 
-
+   private  lateinit var ivFingerPrint : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.finger_print)
 
+        ivFingerPrint = findViewById(R.id.fingerprint)
+        ivFingerPrint.setOnClickListener {
+
+            FingerPrintAuth()
+        }
+
     }
 
     fun LoginAPI(view: View?) {}
 
-    fun FingerPrintAuth(view: View?) {
+    fun FingerPrintAuth() {
         FingerPrintDialog()
     }
 

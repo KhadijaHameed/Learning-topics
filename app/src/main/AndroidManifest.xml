@@ -2,19 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.roomwrapperimplement">
 
-
-    <!--pkg => zoom-->
-    <uses-permission android:name="android.permission.CAMERA" />
     <!--pkg => music -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!--pkg => download music -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <!-- finger print -->
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
 
+    <!--pkg => zoom-->
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -26,30 +25,24 @@
 
         <!--TODO::  Ask Runtime Permission -->
         <!--it is used for using custom fontsfor complete app-->
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+        <activity android:name=".MainActivity"></activity>
 
         <!-- room db -->
-        <activity android:name=".MainActivity"></activity>
         <activity android:name=".adapter.EditInfo"></activity>
-
-        <!-- db stack -->
         <activity android:name="com.example.stack.StackActivity"></activity>
 
-        <!-- age calculator  -->
+        <!-- db stack -->
         <activity android:name="com.example.ageCalculator.ACSplashScreen"></activity>
-        <activity android:name="com.example.ageCalculator.ACMainActivity"></activity>
 
+        <!-- age calculator  -->
+        <activity android:name="com.example.ageCalculator.ACMainActivity"></activity>
         <activity android:name="com.example.qrCodeScanner.QRCodeMainActivity"></activity>
 
-        <!-- playlist -->
         <activity android:name="com.example.musicplayer.AndroidBuildingMusicPlayerActivity"></activity>
+
+        <!-- playlist -->
         <activity android:name="com.example.musicplayer.PlayListActivity"></activity>
-
-        <activity android:name="com.example.downloadMusic.DownloadMusicActivity">
-        </activity>
-
+        <activity android:name="com.example.downloadMusic.DownloadMusicActivity"></activity>
 
         <!-- finger print -->
         <activity android:name="com.example.fingerPrint.FingerPrintActivity">
@@ -57,28 +50,58 @@
         </activity>
 
         <!--screen-->
-        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.ScreenMainActivity">
+        <activity
+            android:name="com.example.screens.ScreenMainActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
 
-          <!--  <intent-filter>
+            <!--  <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.screens.Home"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.example.screens.Homescreen"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name="com.example.screens.HomeScreen_two"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name="com.example.screens.ForgotPassword"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name="com.example.screens.Navigation"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name="com.example.screens.Setting"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name="com.example.screens.ScreenSplash"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+
+        <activity android:name="com.example.palindrome.PalindromeMainActivity">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
-        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.Home"/>
-
-        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.Homescreen"/>
-
-        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.HomeScreen_two"/>
-
-        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.ForgotPassword"/>
-
-        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.Navigation"/>
-
-        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.Setting"/>
-
-        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.ScreenSplash"/>
 
     </application>
+
 
 </manifest>
