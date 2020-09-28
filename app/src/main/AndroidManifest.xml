@@ -92,8 +92,8 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-
-        <activity android:name="com.example.palindrome.PalindromeMainActivity">
+    <activity android:name="com.example.palindrome.PalindromeMainActivity"/>
+        <activity android:name="com.example.numberConverter.NumberConverterMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
