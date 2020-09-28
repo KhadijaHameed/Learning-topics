@@ -56,7 +56,7 @@
 
         </activity>
 
-
+        <!--screen-->
         <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.example.screens.ScreenMainActivity">
 
           <!--  <intent-filter>
