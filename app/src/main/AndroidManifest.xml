@@ -100,10 +100,6 @@
 
         <!-- detect incoming call status -->
         <activity android:name="com.example.detectingphoneincomenoutgoingcalls.DetectCallMainActivity">
-        <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
-        <category android:name="android.intent.category.LAUNCHER"/>
-        </intent-filter>
         </activity>
 
         <receiver android:name="com.example.detectingphoneincomenoutgoingcalls.detectCall">
@@ -111,6 +107,14 @@
                 <action android:name="android.intent.action.PHONE_STATE"/>
             </intent-filter>
         </receiver>
+
+        <!-- date compare -->
+        <activity android:name="com.example.datecomparingproject.DateCompareMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
 
 
 
