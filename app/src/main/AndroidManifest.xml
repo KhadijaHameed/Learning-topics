@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.roomwrapperimplement">
 
-    <!--pkg => music -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!--pkg => download music -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,6 +12,9 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <!--pkg => zoom-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -88,20 +89,25 @@
             android:name="com.example.screens.ScreenSplash"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+        <activity android:name="com.example.palindrome.PalindromeMainActivity" />
 
-    <activity android:name="com.example.palindrome.PalindromeMainActivity"/>
-        <activity android:name="com.example.numberConverter.NumberConverterMainActivity">
+        <!-- palindrome -->
+        <activity android:name="com.example.numberConverter.NumberConverterMainActivity"></activity>
+
+        <!--drag and drop -->
+        <activity android:name="com.example.dragAndDrop.DragnDropMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
     </application>
+
 
 
 </manifest>
