@@ -13,7 +13,8 @@
 
     <!--pkg => zoom-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <!---pkg =>  detect incoming call status -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
         android:name=".MyApplication"
@@ -95,13 +96,33 @@
         <activity android:name="com.example.numberConverter.NumberConverterMainActivity"></activity>
 
         <!--drag and drop -->
-        <activity android:name="com.example.dragAndDrop.DragnDropMainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name="com.example.dragAndDrop.DragnDropMainActivity"></activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <!-- detect incoming call status -->
+        <activity android:name="com.example.detectingphoneincomenoutgoingcalls.DetectCallMainActivity">
+        <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
         </activity>
+
+        <receiver android:name="com.example.detectingphoneincomenoutgoingcalls.detectCall">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+
+
+
+
+
+
+
+
+
+
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
