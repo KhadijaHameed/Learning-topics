@@ -40,11 +40,6 @@
         <activity android:name="com.example.ageCalculator.ACMainActivity"></activity>
         <activity android:name="com.example.qrCodeScanner.QRCodeMainActivity"></activity>
 
-        <activity android:name="com.example.musicplayer.AndroidBuildingMusicPlayerActivity"></activity>
-
-        <!-- playlist -->
-        <activity android:name="com.example.musicplayer.PlayListActivity"></activity>
-        <activity android:name="com.example.downloadMusic.DownloadMusicActivity"></activity>
 
         <!-- finger print -->
         <activity android:name="com.example.fingerPrint.FingerPrintActivity">
@@ -110,10 +105,6 @@
 
         <!-- date compare -->
         <activity android:name="com.example.datecomparingproject.DateCompareMainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
 
 
