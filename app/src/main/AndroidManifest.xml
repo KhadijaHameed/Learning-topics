@@ -107,7 +107,14 @@
         <activity android:name="com.example.datecomparingproject.DateCompareMainActivity">
         </activity>
 
+        <!-- installed app list -->
+        <activity android:name="com.example.installedapplist.InstalledAppListMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
 
 
