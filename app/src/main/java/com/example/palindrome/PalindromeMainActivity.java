@@ -26,6 +26,8 @@ public class PalindromeMainActivity extends AppCompatActivity {
 
     EditText word;
     Button check;
+    int r, sum = 0, temp;
+    int n;//It is the number variable to be checked for palindrome
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,22 @@ public class PalindromeMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
+                // CHECKED INTEGER PALINDROME
+                n = Integer.parseInt(word.getText().toString());
+                temp = n;
+                while (n > 0) {
+                    r = n % 10;  //getting remainder
+                    sum = (sum * 10) + r;
+                    n = n / 10;
+                }
+                if (temp == sum) {
+                    System.out.println("palindrome number ");
+                } else {
+                    System.out.println("not palindrome");
+                }
+
+                // CHECKED STRING PALINDROME
                 String original, reverse = ""; // Objects of String class
                 original = word.getText().toString();
                 int length = original.length();
@@ -48,11 +66,13 @@ public class PalindromeMainActivity extends AppCompatActivity {
                 if (original.equals(reverse)) {
                     Log.d("test", "!!!!   original: " + original + "reverse: " + reverse);
                     Toast.makeText(PalindromeMainActivity.this, "This is palindrome", Toast.LENGTH_LONG).show();
-                }  else {
+                } else {
 
                     Log.d("test", "xxxx original: " + original + "reverse: " + reverse);
                     Toast.makeText(PalindromeMainActivity.this, "This isn't palindrome", Toast.LENGTH_LONG).show();
                 }
+
+
             }
 
 
