@@ -85,9 +85,16 @@
             android:name="com.example.screens.ScreenSplash"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
-        <activity android:name="com.example.palindrome.PalindromeMainActivity" />
-
         <!-- palindrome -->
+        <activity android:name="com.example.palindrome.PalindromeMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+       <!-- Number Converter -->
         <activity android:name="com.example.numberConverter.NumberConverterMainActivity"></activity>
 
         <!--drag and drop -->
@@ -109,11 +116,7 @@
 
         <!-- installed app list -->
         <activity android:name="com.example.installedapplist.InstalledAppListMainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
 

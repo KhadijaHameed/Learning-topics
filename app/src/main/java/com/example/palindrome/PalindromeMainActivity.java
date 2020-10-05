@@ -3,6 +3,7 @@ package com.example.palindrome;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,63 +35,30 @@ public class PalindromeMainActivity extends AppCompatActivity {
         word = (EditText) findViewById(R.id.et_word);
 
         check = (Button) findViewById(R.id.btn_check);
-        //int totallength = text.length();
 
-
-        //TODO::  resolve it . it's not working properly
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String text = word.getText().toString();
+                String original, reverse = ""; // Objects of String class
+                original = word.getText().toString();
+                int length = original.length();
+                for (int i = length - 1; i >= 0; i--)
+                    reverse = reverse + original.charAt(i);
+                if (original.equals(reverse)) {
+                    Log.d("test", "!!!!   original: " + original + "reverse: " + reverse);
+                    Toast.makeText(PalindromeMainActivity.this, "This is palindrome", Toast.LENGTH_LONG).show();
+                }  else {
 
-                String line = "";
-                for (int t=0; t<text.length(); ){
-                    line =line+text.charAt(t);
-                    t++;
-                }
-
-                String reverse = "";
-                for (int a=text.length(); a>0 ;){
-                    reverse = reverse+ text.charAt(a);
-                    a--;
-                }
-
-
-                if(line.equals(reverse)){
-                    Toast.makeText(PalindromeMainActivity.this , "This is palindrome", Toast.LENGTH_LONG ).show();
-                }else {
-                    Toast.makeText(PalindromeMainActivity.this , "This isn't palindrome", Toast.LENGTH_LONG ).show();
+                    Log.d("test", "xxxx original: " + original + "reverse: " + reverse);
+                    Toast.makeText(PalindromeMainActivity.this, "This isn't palindrome", Toast.LENGTH_LONG).show();
                 }
             }
+
+
         });
 
 
-
-  /*      check.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-            String text = word.getText().toString();
-
-            int len = text.length();
-
-             String first = String.valueOf(text.charAt(0));
-             String second = String.valueOf(text.charAt(1));
-
-             String last = String.valueOf(text.charAt(len-1));
-             String secondlast = String.valueOf(text.charAt(len-2));
-
-              if(first.equals(last)  && second.equals(secondlast)){
-              }else{
-                  Toast.makeText(MainActivity.this , "This isn't palindrome", Toast.LENGTH_LONG ).show();
-              }
-
-
-
-            }
-        });*/
     }
 
 }
