@@ -26,7 +26,9 @@ public class PalindromeMainActivity extends AppCompatActivity {
 
     EditText word;
     Button check;
-    int r, sum = 0, temp;
+    int r; //remainder
+    int sum = 0;// reversedInteger
+    int temp;  //originalInteger
     int n;//It is the number variable to be checked for palindrome
 
     @Override
@@ -42,10 +44,9 @@ public class PalindromeMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
                 // CHECKED INTEGER PALINDROME
                 n = Integer.parseInt(word.getText().toString());
-                temp = n;
+                temp = n;   // originalInteger = num;
                 while (n > 0) {
                     r = n % 10;  //getting remainder
                     sum = (sum * 10) + r;
