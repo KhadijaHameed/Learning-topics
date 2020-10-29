@@ -48,7 +48,6 @@ public class InstalledAppListMainActivity extends AppCompatActivity {
         recyclerView.setAdapter(recyclerAdapter);
     }
 
-
     public void readAppName() {
         List<PackageInfo> packList = getPackageManager().getInstalledPackages(0);
         for (int i = 0; i < packList.size(); i++) {

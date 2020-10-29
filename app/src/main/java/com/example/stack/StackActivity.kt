@@ -22,9 +22,7 @@ class StackActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityStackBinding.inflate(layoutInflater)
         setContentView(binding.root)  //activity_stack
-
         supportActionBar?.title = "stack push and pop val"
-
 
         binding.btnStackPush.setOnClickListener {
             var pushStack : Int= binding.etStackPush.text.toString().toInt()
@@ -34,11 +32,9 @@ class StackActivity : AppCompatActivity() {
 
         binding.btnShowResult.setOnClickListener {
           //  a = stack.pop()
-
             //TODO incoMplete ... do stack push and pop count
             binding.tvStackPop.text = stack.pop().toString()
         }
-
 
     }
 

@@ -11,8 +11,6 @@ import com.example.roomwrapperimplement.R;
 
 public class ScreenSplash extends Activity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

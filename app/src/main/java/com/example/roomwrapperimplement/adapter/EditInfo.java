@@ -27,7 +27,7 @@ public  class EditInfo /*extends AppCompatActivity {
         setContentView(R.layout.edit_info);
         personInfoViewModel = ViewModelProviders.of((this).get(PersonInfoViewModel.class));
 */
-        extends AppCompatActivity {
+    extends AppCompatActivity {
     Button btnUpdate;
     EditText etNewName;
     private PersonInfoViewModel personInfoViewModel;

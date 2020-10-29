@@ -49,8 +49,6 @@ class FingerPrintActivity :AppCompatActivity(),FingerprintResult{
     private var cipher: Cipher? = null
     private val KEY_NAME = "AndroidKey"
     private var mdialog: AlertDialog? = null
-
-
    private  lateinit var ivFingerPrint : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 public class AppNameModel {
 
     String appname;
-    Drawable AppIcon ;
+    Drawable AppIcon;
 
     public Drawable getAppIcon() {
         return AppIcon;
@@ -18,7 +18,6 @@ public class AppNameModel {
     public void setAppIcon(Drawable appIcon) {
         AppIcon = appIcon;
     }
-
 
 
     public String getAppname() {

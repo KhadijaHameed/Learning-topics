@@ -27,8 +27,8 @@ public class DialogGetAllData extends Dialog implements View.OnClickListener {
     public Dialog d;
     public Button btnCancel;
     RecyclerView rvGetAllData;
+    AllDataAdapter allDataAdapter;
     private PersonInfoViewModel personInfoViewModel;
-    AllDataAdapter allDataAdapter ;
 
     public DialogGetAllData(Activity a, AllDataAdapter allDataAdapter) {
         super(a);
@@ -42,12 +42,15 @@ public class DialogGetAllData extends Dialog implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dialog);
-        btnCancel = (Button) findViewById(R.id.btn_cancel);
-        rvGetAllData =  findViewById(R.id.rv_person_info);
 
-       // allDataAdapter = new AllDataAdapter(c);
+        initView();
         getAllDataData();
-        //allDataAdapter.setPersonInfoList();
+        comment();
+    }
+
+    private void comment() {
+        // allDataAdapter = new AllDataAdapter(c);
+        // allDataAdapter.setPersonInfoList();
        /* personInfoViewModel = ViewModelProviders.of(this).get(PersonInfoViewModel.class);
         personInfoViewModel.getAlldata().observe(this, new Observer<List<PersonInfo>>() {
             @Override
@@ -56,41 +59,40 @@ public class DialogGetAllData extends Dialog implements View.OnClickListener {
                 allDataAdapter.setPersonInfoList(personInfos);
             }
         });*/
+        /*personInfoViewModel = ViewModelProviders.of(c).get(PersonInfoViewModel.class); */
+    }
 
-          /*personInfoViewModel = ViewModelProviders.of(c).get(PersonInfoViewModel.class);
-        */
-
+    private void initView() {
+        btnCancel = (Button) findViewById(R.id.btn_cancel);
+        rvGetAllData = findViewById(R.id.rv_person_info);
         btnCancel.setOnClickListener(this);
-            }
+    }
+
     private void getAllDataData() {
         try {
-            Log.d("dialog","getalldata ");
+            Log.d("dialog", "getalldata ");
             //\\ LiveData<List<PersonInfo>> allpersoninfo =   dbRepo.getAllInfo();
-       /* List<PersonInfo> allpersoninfo = (List<PersonInfo>) personInfoViewModel.getAlldata();
-
-
-            tvGetAllData.setText(allpersoninfo.size());
-
-        */
-
+            /* List<PersonInfo> allpersoninfo = (List<PersonInfo>) personInfoViewModel.getAlldata();
+            tvGetAllData.setText(allpersoninfo.size());*/
             LinearLayoutManager layoutManager = new LinearLayoutManager(c);
-            //    new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true);
+            // new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true);
             rvGetAllData.setLayoutManager(layoutManager);
             rvGetAllData.setHasFixedSize(true);
-           // allDataAdapter = new AllDataAdapter(c);
-           rvGetAllData.setAdapter(allDataAdapter);
+            // allDataAdapter = new AllDataAdapter(c);
+            rvGetAllData.setAdapter(allDataAdapter);
         } catch (Exception e) {
             Log.d("#error", e.getLocalizedMessage());
         }
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_cancel:
                 //c.finish();
-               dismiss();
+                dismiss();
                 break;
-               default:
+            default:
                 break;
         }
         dismiss();

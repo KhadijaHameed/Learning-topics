@@ -34,7 +34,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         this.sharedPreference = editor;
     }
 
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater  = LayoutInflater.from(parent.getContext());
@@ -50,13 +49,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.Icon.setImageDrawable(model.getAppIcon());
     }
 
-
-
     @Override
     public int getItemCount() {
         return arrayList.size();
     }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -82,9 +78,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                     p.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
                 }
             });
-
         }
-
 
     }
 }

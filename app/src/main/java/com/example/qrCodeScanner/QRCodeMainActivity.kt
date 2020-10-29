@@ -15,28 +15,27 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView
 
 class QRCodeMainActivity : AppCompatActivity(),ZXingScannerView.ResultHandler{
 
-
     val TAG = "test"
     lateinit var rl_dashboard: RelativeLayout
     lateinit var rl_scan:RelativeLayout
     lateinit var ll_dash_boardexpand: LinearLayout
     var ll_main:LinearLayout? = null
     var animZoomOut: Animation? = null
-
     var mScannerView: ZXingScannerView? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.zoom_activity_main)
 
-        ll_main = findViewById(R.id.ll_main)
+        initView()
         animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_out)
-
-
-
-        rl_scan = findViewById<RelativeLayout>(R.id.rl_scan)
         rl_scan.setOnClickListener(View.OnClickListener { QrScanner() })
+
+    }
+
+    private fun initView() {
+        ll_main = findViewById(R.id.ll_main)
+        rl_scan = findViewById<RelativeLayout>(R.id.rl_scan)
     }
 
     fun QrScanner() {
@@ -45,8 +44,6 @@ class QRCodeMainActivity : AppCompatActivity(),ZXingScannerView.ResultHandler{
         mScannerView!!.setResultHandler(this) // Register ourselves as a handler for scan results.<br />
         mScannerView!!.startCamera()
     }
-
-
 
     override fun handleResult(result: Result) {
         val builder = AlertDialog.Builder(this)
@@ -60,4 +57,5 @@ class QRCodeMainActivity : AppCompatActivity(),ZXingScannerView.ResultHandler{
         val vString = result.text
         runOnUiThread(Runnable { Toast.makeText(this, vString, Toast.LENGTH_LONG).show() })
     }
+
 }

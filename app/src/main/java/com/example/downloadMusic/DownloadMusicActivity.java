@@ -26,29 +26,26 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class DownloadMusicActivity  extends AppCompatActivity {
+public class DownloadMusicActivity extends AppCompatActivity {
 
-
-
-
-    // Button to download and play Music
-    private Button btnPlayMusic;
-    // Media Player Object
-    private MediaPlayer mPlayer;
-    // Progress Dialog Object
-    private ProgressDialog prgDialog;
     // Progress Dialog type (0 - for Horizontal progress bar)
     public static final int progress_bar_type = 0;
     // Music resource URL
     //private static String file_url = "http://programmerguru.com/android-tutorial/wp-content/uploads/2014/01/jai_ho.mp3";
     //http://www.beepzoid.com/ringtones/OldPhone.mp3
     private static String file_url = "https://www.beepzoid.com/ringtones/OldPhone.mp3";
+    // Button to download and play Music
+    private Button btnPlayMusic;
+    // Media Player Object
+    private MediaPlayer mPlayer;
+    // Progress Dialog Object
+    private ProgressDialog prgDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.downloadmusic_activity);
-// Show Download Music Button
+        // Show Download Music Button
         btnPlayMusic = (Button) findViewById(R.id.btnProgressBar);
         // Download Music Button click listener
         btnPlayMusic.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +54,8 @@ public class DownloadMusicActivity  extends AppCompatActivity {
                 // Disable the button to avoid playing of song multiple times
                 btnPlayMusic.setEnabled(false);
                 // Downloaded Music File path in SD Card
-               // File file = new File(Environment.getExternalStorageDirectory().getPath()+"/tuhi.mp3");
-                File file = new File(Environment.getExternalStorageDirectory()+"/OldPhone.mp3");
+                // File file = new File(Environment.getExternalStorageDirectory().getPath()+"/tuhi.mp3");
+                File file = new File(Environment.getExternalStorageDirectory() + "/OldPhone.mp3");
                 // Check if the Music file already exists
                 if (file.exists()) {
                     Toast.makeText(getApplicationContext(), "File already exist under SD card, playing Music", Toast.LENGTH_LONG).show();
@@ -92,6 +89,38 @@ public class DownloadMusicActivity  extends AppCompatActivity {
         }
     }
 
+    // Play Music
+    protected void playMusic() {
+        // Read Mp3 file present under SD card
+        //Uri myUri1 = Uri.parse("file:///sdcard/OldPhone.mp3");
+        Uri myUri1 = Uri.parse("file://OldPhone.mp3");
+        mPlayer = new MediaPlayer();
+        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        try {
+            mPlayer.setDataSource(getApplicationContext(), myUri1);
+            mPlayer.prepare();
+            // Start playing the Music file
+            mPlayer.start();
+            mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                public void onCompletion(MediaPlayer mp) {
+                    // TODO Auto-generated method stub
+                    // Once Music is completed playing, enable the button
+                    btnPlayMusic.setEnabled(true);
+                    Toast.makeText(getApplicationContext(), "Music completed playing", Toast.LENGTH_LONG).show();
+                }
+            });
+        } catch (IllegalArgumentException e) {
+            Toast.makeText(getApplicationContext(), "You might not set the URI correctly!", Toast.LENGTH_LONG).show();
+        } catch (SecurityException e) {
+            Toast.makeText(getApplicationContext(), "URI cannot be accessed, permissed needed", Toast.LENGTH_LONG).show();
+        } catch (IllegalStateException e) {
+            Toast.makeText(getApplicationContext(), "Media Player is not in correct state", Toast.LENGTH_LONG).show();
+        } catch (IOException e) {
+            Toast.makeText(getApplicationContext(), "IO Error occured ", Toast.LENGTH_LONG).show();
+            Log.e("test", "e " + e);
+        }
+    }
+
     // Async Task Class
     class DownloadMusicfromInternet extends AsyncTask<String, String, String> {
 
@@ -114,9 +143,9 @@ public class DownloadMusicActivity  extends AppCompatActivity {
                 // Get Music file length
                 int lenghtOfFile = conection.getContentLength();
                 // input stream to read file - with 8k buffer
-                InputStream input = new BufferedInputStream(url.openStream(),10*1024);
+                InputStream input = new BufferedInputStream(url.openStream(), 10 * 1024);
                 // Output stream to write file in SD card
-                OutputStream output = new FileOutputStream(Environment.getExternalStorageDirectory().getPath()+"/OldPhone.mp3");
+                OutputStream output = new FileOutputStream(Environment.getExternalStorageDirectory().getPath() + "/OldPhone.mp3");
                 byte data[] = new byte[1024];
                 long total = 0;
                 while ((count = input.read(data)) != -1) {
@@ -152,38 +181,6 @@ public class DownloadMusicActivity  extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Download complete, playing Music", Toast.LENGTH_LONG).show();
             // Play the music
             playMusic();
-        }
-    }
-
-    // Play Music
-    protected void playMusic(){
-        // Read Mp3 file present under SD card
-        //Uri myUri1 = Uri.parse("file:///sdcard/OldPhone.mp3");
-        Uri myUri1 = Uri.parse("file://OldPhone.mp3");
-        mPlayer  = new MediaPlayer();
-        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        try {
-            mPlayer.setDataSource(getApplicationContext(), myUri1);
-            mPlayer.prepare();
-            // Start playing the Music file
-            mPlayer.start();
-            mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                public void onCompletion(MediaPlayer mp) {
-                    // TODO Auto-generated method stub
-                    // Once Music is completed playing, enable the button
-                    btnPlayMusic.setEnabled(true);
-                    Toast.makeText(getApplicationContext(), "Music completed playing",Toast.LENGTH_LONG).show();
-                }
-            });
-        } catch (IllegalArgumentException e) {
-            Toast.makeText(getApplicationContext(), "You might not set the URI correctly!",	Toast.LENGTH_LONG).show();
-        } catch (SecurityException e) {
-            Toast.makeText(getApplicationContext(),	"URI cannot be accessed, permissed needed",	Toast.LENGTH_LONG).show();
-        } catch (IllegalStateException e) {
-            Toast.makeText(getApplicationContext(),	"Media Player is not in correct state",	Toast.LENGTH_LONG).show();
-        } catch (IOException e) {
-            Toast.makeText(getApplicationContext(),	"IO Error occured ",	Toast.LENGTH_LONG).show();
-            Log.e("test","e "+e);
         }
     }
 }

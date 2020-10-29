@@ -36,10 +36,17 @@ public class PalindromeMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.palindrome_activity_main);
 
+         initViews();
+        checkIfPalindrome();
+
+       }
+
+    private void initViews() {
         word = (EditText) findViewById(R.id.et_word);
-
         check = (Button) findViewById(R.id.btn_check);
+    }
 
+    private void checkIfPalindrome() {
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,14 +79,8 @@ public class PalindromeMainActivity extends AppCompatActivity {
                     Log.d("test", "xxxx original: " + original + "reverse: " + reverse);
                     Toast.makeText(PalindromeMainActivity.this, "This isn't palindrome", Toast.LENGTH_LONG).show();
                 }
-
-
             }
-
-
         });
-
-
     }
 
 }

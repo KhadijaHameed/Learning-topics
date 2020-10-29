@@ -14,7 +14,6 @@ public class DateCompareMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.date_compare_activity_main);
 
-
         SimpleDateFormat format = new SimpleDateFormat("dd-MM");
         try {
             Date startDate = format.parse("11-09");
@@ -26,8 +25,9 @@ public class DateCompareMainActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(DateCompareMainActivity.this, "The date is not in range", Toast.LENGTH_SHORT).show();
             }
-        }   catch (Exception e) {
+           }catch (Exception e) {
             Toast.makeText(DateCompareMainActivity.this,"Exception occurred", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

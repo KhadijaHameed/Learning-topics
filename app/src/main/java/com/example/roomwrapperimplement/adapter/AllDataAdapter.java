@@ -33,10 +33,11 @@ public class AllDataAdapter extends RecyclerView.Adapter<AllDataAdapter.ViewHold
     public AllDataAdapter(Context c){
         this.context = c;
     }
-  /*  public AllDataAdapter(Context c,List<PersonInfo> personINfoList ){
+    /*  public AllDataAdapter(Context c,List<PersonInfo> personINfoList ){
         this.context = c;
         this.personInfoList = personINfoList;
     }*/
+
     public void setPersonInfoList(List<PersonInfo> personInfo){
         this.personInfoList = personInfo;
         notifyDataSetChanged();
@@ -45,8 +46,6 @@ public class AllDataAdapter extends RecyclerView.Adapter<AllDataAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        // Inflate the custom layout
         View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_row_data, parent, false);
         ViewHolder vh = new ViewHolder(mView);
         return vh;
@@ -76,8 +75,7 @@ public class AllDataAdapter extends RecyclerView.Adapter<AllDataAdapter.ViewHold
                 personInfoViewModel.delete(personInfo);
                 Toast.makeText(context, "Deleted row"+ i+ " "+fiestNAme, Toast.LENGTH_SHORT).show();
                 //dbRepo.delete(personInfo);
-              //  PersonInfo personInfo1 = ViewModelProviders.of().get(PersonInfoViewModel.class);
-             //
+               //  PersonInfo personInfo1 = ViewModelProviders.of().get(PersonInfoViewModel.class);
               // repo.delete((holder.tvFName.getText().toString()));
             }
         });

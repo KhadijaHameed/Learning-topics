@@ -41,29 +41,26 @@ public class MainActivity extends AppCompatActivity {
     String newWord = " ";
     Button btnInsert, btnUpdate, btnDelete, btnGetAllData, btnDeleteAllData;
     TextView tvGetAllData;
-    private PersonInfoViewModel personInfoViewModel;
     RecyclerView rvPersonData;
-
+    private PersonInfoViewModel personInfoViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
-        AllDataAdapter allDataAdapter = new AllDataAdapter(this);
 
          /* LinearLayoutManager layoutManager = new LinearLayoutManager(this);
          rvPersonData.setLayoutManager(layoutManager);
         rvPersonData.setHasFixedSize(true);
-
-
         rvPersonData.setAdapter(allDataAdapter);*/
+        AllDataAdapter allDataAdapter = new AllDataAdapter(this);
 
         personInfoViewModel = ViewModelProviders.of(this).get(PersonInfoViewModel.class);
         personInfoViewModel.getAlldata().observe(this, new Observer<List<PersonInfo>>() {
             @Override
             public void onChanged(List<PersonInfo> personInfos) {
-          //      Toast.makeText(MainActivity.this, "onchange", Toast.LENGTH_SHORT).show();
+                //      Toast.makeText(MainActivity.this, "onchange", Toast.LENGTH_SHORT).show();
                 allDataAdapter.setPersonInfoList(personInfos);
             }
         });
@@ -162,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
     private void insertData() {
         this.newWord = etNewWord.getText().toString();
         try {
-          PersonInfo   personInfo = new PersonInfo( newWord);
+            PersonInfo personInfo = new PersonInfo(newWord);
             personInfoViewModel.insert(personInfo);
             Toast.makeText(this, "Inserted! " + newWord, Toast.LENGTH_LONG).show();
             Log.d("data", "personInfo" + personInfo);
@@ -183,8 +180,8 @@ public class MainActivity extends AppCompatActivity {
     private void updateData() {
         this.newWord = etNewWord.getText().toString();
         try {
-            PersonInfo personInfo = new PersonInfo( newWord);
-           // dbRepo.update(personInfo);
+            PersonInfo personInfo = new PersonInfo(newWord);
+            // dbRepo.update(personInfo);
             Toast.makeText(this, "to Update list, Get all data" + newWord, Toast.LENGTH_LONG).show();
             //Log.d("data", "personInfo" + personInfo);
             etNewWord.setText(" ");
@@ -197,9 +194,9 @@ public class MainActivity extends AppCompatActivity {
         try {
             this.newWord = etNewWord.getText().toString();
             PersonInfo personInfo = new PersonInfo(newWord);
-           personInfoViewModel.delete(personInfo);
+            personInfoViewModel.delete(personInfo);
 
-           // dbRepo.delete(personInfo);
+            // dbRepo.delete(personInfo);
             Toast.makeText(this, "Deleted " + newWord, Toast.LENGTH_LONG).show();
             Log.d("data", "personInfo" + personInfo);
             etNewWord.setText(" ");
@@ -207,7 +204,8 @@ public class MainActivity extends AppCompatActivity {
             Log.d("#error", e.getLocalizedMessage());
         }
     }
-//done
+
+    //done
     private void getAllDataData() {
         try {
             //\\ LiveData<List<PersonInfo>> allpersoninfo =   dbRepo.getAllInfo();
@@ -223,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
             rvPersonData.setLayoutManager(layoutManager);
             rvPersonData.setHasFixedSize(true);
             // allDataAdapter = new AllDataAdapter();
-          //  rvPersonData.setAdapter(allDataAdapter);
+            //  rvPersonData.setAdapter(allDataAdapter);
         } catch (Exception e) {
             Log.d("#error", e.getLocalizedMessage());
         }

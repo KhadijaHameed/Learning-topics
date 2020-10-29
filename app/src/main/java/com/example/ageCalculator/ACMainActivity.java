@@ -63,61 +63,43 @@ public class ACMainActivity extends AppCompatActivity implements View.OnClickLis
 
         currentDateSet();
 
-       SetListners();
+        SetListners();
 
+        btnCalculate();
+            }
 
-
-
-
-
-
-
+    private void btnCalculate() {
         btn_calculate.setOnClickListener(new View.OnClickListener() {
-          //  @RequiresApi(api = Build.VERSION_CODES.O)
+            //  @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
 
-              if (et_date_of_birth.getText().toString().trim().equals("")){
-                  et_date_of_birth.setError("this field can not be empty");
-                  alertDailogeForEpmtyEditTexet();
-              }
-              else {
-                  calculationOfDateandTime();
-                  layoutVISIBLE();
-                  setDataFromTextviews();
-                  speakOut();
-
-
-             
-
-
-              }
-
-
+                if (et_date_of_birth.getText().toString().trim().equals("")){
+                    et_date_of_birth.setError("this field can not be empty");
+                    alertDailogeForEpmtyEditTexet();
+                }
+                else {
+                    calculationOfDateandTime();
+                    layoutVISIBLE();
+                    setDataFromTextviews();
+                    speakOut();
+                }
             }
-
         });
-
-
     }
 
-        @Override
+    @Override
     protected void onDestroy() {
-
         if (tts != null){
             tts.stop();
             tts.shutdown();
         }
-
         super.onDestroy();
     }
 
     private void speakOut() {
-
         String text = tv_year.getText().toString();
         tts.speak("your age is "+text, TextToSpeech.QUEUE_FLUSH,null);
-
-
     }
 
     public void SetListners(){
@@ -141,9 +123,8 @@ public class ACMainActivity extends AppCompatActivity implements View.OnClickLis
            layoutINVISIBLE();
             ClearDateFromTextviews();
             cleardataSpeakOut();
-        }
+           }
        }
-
     }
 
     private void cleardataSpeakOut() {
@@ -192,7 +173,6 @@ public class ACMainActivity extends AppCompatActivity implements View.OnClickLis
             }
         },year,month,day);
         datePickerDialog.show();
-
     }
 
     public void currentDateSet(){
@@ -249,8 +229,6 @@ public class ACMainActivity extends AppCompatActivity implements View.OnClickLis
 
         currentdate = tv_current_date.getText().toString();
         birthdate = et_date_of_birth.getText().toString();
-
-
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date currentDate = null;
@@ -342,7 +320,6 @@ public class ACMainActivity extends AppCompatActivity implements View.OnClickLis
         tv_calculation_total_hours.setText(""+diffHours);
         tv_calculation_total_mintues.setText(""+diffMinutes);
         tv_calculation_total_seconds.setText(""+diffSeconds);
-
     }
 
     public void ClearDateFromTextviews(){
@@ -358,7 +335,6 @@ public class ACMainActivity extends AppCompatActivity implements View.OnClickLis
         tv_calculation_total_mintues.setText("");
         tv_calculation_total_seconds.setText("");
         tv_birthdate_day.setText("");
-
     }
 
     public void initViews(){
