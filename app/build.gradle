@@ -87,5 +87,13 @@ dependencies {
         mavenCentral()
     }
 
+    // pkg=> musicPlayer
+    implementation 'com.github.yukuku:ambilwarna:2.0.1'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
+    implementation 'com.sdsmdg.harjot:croller:1.0.7'
+    implementation 'com.baoyz.pullrefreshlayout:library:1.2.0'
+    implementation 'com.pes.materialcolorpicker:library:1.2.0'
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.11.0'
 
 }

@@ -4,4 +4,23 @@
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
     <string name="btn_title">Download</string>
+
+    <string-array name="planets_array">
+        <item>Normal</item>
+        <item>Classical</item>
+        <item>Dance</item>
+        <item>Flat</item>
+        <item>Folk</item>
+        <item>Heavy Metal</item>
+        <item>Hipp Hop</item>
+        <item>Jazz </item>
+        <item>PoP</item>
+        <item>Rock</item>
+        <item>Custom</item>
+    </string-array>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
 </resources>

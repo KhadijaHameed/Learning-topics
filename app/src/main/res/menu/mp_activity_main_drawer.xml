@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+
+            android:id="@+id/nav_remove_ads"
+            android:icon="@drawable/remove_ads"
+            android:title="Remove Ads" />
+        <item
+            android:id="@+id/nav_sleep_time"
+            android:icon="@drawable/sleep_time"
+            android:title="Sleep Time" />
+        <item
+            android:id="@+id/nav_equalizer"
+            android:icon="@drawable/equalizer"
+            android:title="Equalizer" />
+        <item
+            android:id="@+id/nav_download"
+            android:icon="@drawable/download"
+            android:title="Latest download" />
+
+
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Settings" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/feedback"
+            android:title="Feedback"/>
+        <item
+            android:id="@+id/nav_rate_on_store"
+            android:icon="@drawable/rate"
+            android:title="Rate on store" />
+        <!--<item
+            android:icon="@drawable/about"
+            android:id="@+id/nav_about"
+            android:title="About"
+            />
+-->
+
+    </group>
+
+</menu>

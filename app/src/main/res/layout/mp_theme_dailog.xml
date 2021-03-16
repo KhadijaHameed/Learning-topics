@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="220dp"
+    android:padding="5dp"
+    android:background="@drawable/dailogbg"
+    android:layout_height="200dp">
+
+
+    <TextView
+        android:id="@+id/tv_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Theme"
+        android:textStyle="bold"
+        android:fontFamily="@font/roboto_italic"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:id="@+id/tv_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_heading"
+        android:text="Light"
+        android:fontFamily="@font/roboto_italic"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textColor="#ffffff"/>
+    <TextView
+        android:id="@+id/tv_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_light"
+        android:text="Dark"
+        android:fontFamily="@font/roboto_italic"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textColor="#ffffff"/>
+    <TextView
+        android:id="@+id/tv_Glossy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_dark"
+        android:text="Glossy"
+        android:fontFamily="@font/roboto_italic"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textColor="#ffffff"/>
+
+
+</RelativeLayout>

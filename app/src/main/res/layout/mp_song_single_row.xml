@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:layout_height="70dp">
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/atif_aslam"
+        android:id="@+id/ic_singer_image"/>
+
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/ic_singer_image"
+        android:layout_toEndOf="@id/ic_singer_image"
+        android:layout_toLeftOf="@id/tv_duration"
+        android:layout_toStartOf="@id/tv_duration"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/roboto_italic"
+                android:id="@+id/tv_song_name"
+                android:layout_width="match_parent"
+                android:layout_height="17dp"
+                android:layout_marginRight="10dp"
+                android:text="Tera Naam Doon"
+                android:textColor="#ffffff"
+                android:textSize="12sp"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_singer_name"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/roboto_italic"
+                android:text="Atif Aslam"
+                android:textColor="#ffffff" />
+
+            <View
+                android:background="#ffffff"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_singer_name"
+                android:layout_width="1dp"
+                android:layout_height="15dp"
+                android:layout_margin="5dp"
+                android:id="@+id/view2" />
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:id="@+id/tv_movie_name"
+                android:layout_width="match_parent"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/view2"
+                android:layout_toRightOf="@+id/view2"
+                android:text="Entertainment"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/roboto_italic"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:textColor="#ffffff"
+        android:fontFamily="@font/roboto_italic"
+        android:id="@+id/tv_duration"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+       android:layout_toLeftOf="@id/iv_dots"
+        android:text="00:00" />
+
+    <ImageView
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/iv_dots"
+        android:src="@drawable/dots"
+        android:layout_width="40dp"
+        android:layout_height="25dp" />
+
+
+</RelativeLayout>

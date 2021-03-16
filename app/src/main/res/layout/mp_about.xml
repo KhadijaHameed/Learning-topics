@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/spla"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/about_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/courgette"
+            android:text=" About US  "
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/about_layout">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="180dp"
+            android:layout_height="300dp"
+            android:layout_below="@id/textView3"
+            android:src="@drawable/waji" />
+
+        <TextView
+            android:textColor="#ffffff"
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/view"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/courgette"
+            android:text="abdulwajid9997@gmail.com"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:textColor="#ffffff"
+
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/courgette"
+            android:text="Abdul Wajid  "
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:textColor="#ffffff"
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView3"
+            android:layout_margin="10dp"
+            android:layout_toEndOf="@+id/imageView2"
+            android:layout_toRightOf="@+id/imageView2"
+            android:fontFamily="@font/courgette"
+            android:text="  I am Oracle Certified Java Programmer.I am passionate in development of Android Application. My strongest skills are in Object Oriented Programming, Design Pattern,Java Core and Android. I am a team-oriented, Quick learner and analytical problem solver,  I am highly motivated in working on different technologies and also have an ability to work and deliver under pressure." />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:background="#000" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

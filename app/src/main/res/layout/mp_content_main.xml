@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/mp_app_bar_main">
+
+    <RelativeLayout
+        android:background="@color/colorPrimary"
+        android:id="@+id/music"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="60dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="12dp"
+            android:src="@drawable/atif_aslam"
+            android:layout_height="60dp"
+            android:id="@+id/ci_singer" />
+
+        <ImageView
+            android:id="@+id/ic_play_music"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            app:srcCompat="@android:drawable/ic_media_play" />
+
+        <TextView
+            android:id="@+id/tv_song_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ic_play_music"
+            android:layout_toEndOf="@+id/ci_singer"
+            android:layout_toRightOf="@+id/ci_singer"
+            android:fontFamily="@font/roboto_italic"
+            android:textColor="#ffffff"
+            android:textSize="13sp"
+            android:text="Song Name" />
+
+        <View
+            android:layout_marginRight="2dp"
+            android:layout_toStartOf="@id/ic_play_music"
+            android:layout_toLeftOf="@id/ic_play_music"
+            android:layout_marginLeft="2dp"
+            android:layout_toEndOf="@+id/ci_singer"
+            android:layout_toRightOf="@+id/ci_singer"
+            android:layout_centerVertical="true"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <TextView
+            android:id="@+id/tv_artist_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ci_singer"
+            android:layout_toEndOf="@+id/ci_singer"
+            android:layout_toRightOf="@+id/ci_singer"
+            android:text="Singer Name"
+            android:fontFamily="@font/roboto_italic"
+            android:textColor="#ffffff"
+            android:textSize="13sp"/>
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_below="@id/music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="scrollable"
+            app:tabMaxWidth="0dp"
+            app:tabGravity="fill"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_below="@+id/app_bar"
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+
+
+
+</RelativeLayout>
