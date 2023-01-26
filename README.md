@@ -6,4 +6,6 @@ Stack Push and Pop,
 
 QRCodeScanner,
 
-Music Player 
+Music Player,
+
+Kotlin scope: Let, run, also, apply, with
